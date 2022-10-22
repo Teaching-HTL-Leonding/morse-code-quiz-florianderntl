@@ -1,0 +1,15 @@
+* {
+  font-family: sans-serif;
+}
+
+input {
+  width: 500px;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+button {
+  margin-left: 5px;
+}

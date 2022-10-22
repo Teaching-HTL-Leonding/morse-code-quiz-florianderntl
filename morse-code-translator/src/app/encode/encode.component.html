@@ -1,0 +1,25 @@
+<h1>Encode</h1>
+
+<form #f="ngForm">
+  <div>
+    <label>
+      Text to encode:
+      <input [(ngModel)]="text" name="text" required pattern="^[A-Z ]*$" />
+    </label>
+
+    <button type="button" (click)="encode()" [disabled]="!f.form.valid">
+      Encode
+    </button>
+  </div>
+</form>
+
+<div>
+  <label>
+    Morse code:
+    <input [(ngModel)]="morseCode" name="morseCode" required readonly #morseCodeInput="ngModel" />
+  </label>
+
+  <button type="button" (click)="playMorseCode()" [disabled]="!morseCodeInput.valid">
+    Play
+  </button>
+</div>

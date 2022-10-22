@@ -1,0 +1,25 @@
+<h1>Decode</h1>
+
+<form #f="ngForm">
+  <div>
+    <label>
+      Morse code:
+      <input [(ngModel)]="morseCode" name="morseCode" required pattern="^[.\-/ ]*$" #ngMorseCode="ngModel" />
+    </label>
+
+    <button type="button" (click)="decode()" [disabled]="!f.form.valid">
+      Decode
+    </button>
+  </div>
+
+  <div>
+    <label>
+      Output text:
+      <input [(ngModel)]="text" name="text" readonly />
+    </label>
+  </div>
+
+  <p [hidden]="!ngMorseCode.errors?.['pattern']">
+    Please enter a correct morse code!
+  </p>
+</form>
